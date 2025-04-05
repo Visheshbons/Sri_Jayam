@@ -44,8 +44,7 @@ app.get("/book", (req, res) => {
 app.post("/book", (req, res) => {
     // Check if the request body contains all required fields
     if (req.cookies.booked == `true`) {
-        return res.status(400).send("Booking already submitted.");
-        res.redirect("/");
+        return res.status(400).redirect("/");
         err("Booking already submitted.", "low");
     } else {
         res.cookie(`booked`, `true`);
