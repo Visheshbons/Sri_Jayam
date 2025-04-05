@@ -42,24 +42,32 @@ app.get("/book", (req, res) => {
 
 // POST route for booking
 app.post("/book", (req, res) => {
-    log(req.body);
-    const { name, email, phone, date, time } = req.body;
-
-    if (!name || !email || !phone || !date || !time) {
-        err("Incomplete booking details submitted.", "low");
-        return res.status(400).send("All fields are required.");
-    }
-
-    important(`Booking submitted.`);
-
-    // Render a confirmation page or send a success message
-    res.render("booking-confirmation.ejs", {
-        name,
-        email,
-        phone,
-        date,
-        time,
-    });
+    // Check if the request body contains all required fields
+    if (req.cookies.booked == `true`) {
+        return res.status(400).send("Booking already submitted.");
+        res.redirect("/");
+        err("Booking already submitted.", "low");
+    } else {
+        res.cookie(`booked`, `true`);
+        log(req.body);
+        const { name, email, phone, date, time } = req.body;
+    
+        if (!name || !email || !phone || !date || !time) {
+            err("Incomplete booking details submitted.", "low");
+            return res.status(400).send("All fields are required.");
+        }
+    
+        important(`Booking submitted.`);
+    
+        // Render a confirmation page or send a success message
+        res.render("booking-confirmation.ejs", {
+            name,
+            email,
+            phone,
+            date,
+            time,
+        });
+    };
 });
 
 // Handle unspecified routes and redirect to 404.ejs
