@@ -65,4 +65,5 @@ setInterval(() => {
 // Imports the other JS files so that seperate APIs can be used
 import './homePageHandler.js';
 import './bookHandler.js';
+import './photoHandler.js';
 import './404Handler.js';

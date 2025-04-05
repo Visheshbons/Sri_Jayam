@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+        <title>Photo Gallery | Sri Jayam</title>
+    </head>
+<body>
+    
+    <%- include('navbar') %>
+
+    <header>
+        <h1>Photo Gallery</h1>
+    </header>
+
+    <main class="over center">
+
+        <h4 class="main">
+            Our beauty parlour offers a wide range of services, including bridal makeup, salon treatments, and professional waxing. We also provide ladies' tailoring services with computerized embroidery and precise body measurement-based stitching for fashion blouses, salwars, and more, all completed within one hour.
+        </h4>
+
+        <div class="into center">
+            <h3>Expert Makeup</h3>
+            <p>Transform your special day with our expert makeup skills.</p>
+            <% for (let i = 0; i < makeup; i++) { %>
+                <% let num = i + 1; %>
+                <% let bridal = `makeup/${num}.jpg`; %>
+                <img src="<%- bridal %>" alt="Makeup">
+            <% } %>;
+            <br>
+
+            <h3>Salon Treatments</h3>
+            <p>Enjoy a range of services, from facials to hair care.</p>
+            <% for (let i = 0; i < salonTreatments; i++) { %>
+                <% let num = i + 1; %>
+                <% let salon = `salonTreatments/${num}.jpg`; %>
+                <img src="<%- salon %>" alt="Salon Treatments">
+            <% } %>;
+            <br>
+
+            <h3>Professional Waxing</h3>
+            <p>Experience waxing, unparalleled by anyone else.</p>
+            <% for (let i = 0; i < waxing; i++) { %>
+                <% let num = i + 1; %>
+                <% let wax = `waxing/${num}.jpg`; %>
+                <img src="<%- wax %>" alt="Professional Waxing">
+            <% } %>;
+            <br>
+            
+            <h3>Tailoring Services</h3>
+            <p>Over 20 years of tailoring have not gone to waste.</p>
+            <% for (let i = 0; i < tailoring; i++) { %>
+                <% let num = i + 1; %>
+                <% let tailor = `tailoring/${num}.jpg`; %>
+                <img src="<%- tailor %>" alt="Tailoring Services">
+            <% } %>;
+            <br>
+
+            <h3>Embroidery Services</h3>
+            <p>Our computerized embroidery is second to none.</p>
+            <% for (let i = 0; i < embroidery; i++) { %>
+                <% let num = i + 1; %>
+                <% let embroider = `embroidery/${num}.jpg`; %>
+                <img src="<%- embroider %>" alt="Embroidery Services">
+            <% } %>;
+            <br>
+        </div>
+
+    </main>
+
+</body>
+</html>
