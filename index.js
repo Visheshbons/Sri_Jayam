@@ -2,13 +2,14 @@
 console.time("Loading time");
 
 // Imports all the neccecary data
+import express from 'express';
 import chalk from 'chalk';
 import cookieParser from 'cookie-parser';
 
 // Sets up some variables
-const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+const portForward = false; // Set to true if you want to use port forwarding
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
@@ -27,7 +28,7 @@ app.listen(port, () => {
     console.log(``);
 
     // log date and time
-    console.log(`Time of start: ${getDateAndTime()}`);
+    console.log(`Time of start: `);
     console.log(``);
 
     // log website info
