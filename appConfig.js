@@ -8,4 +8,4 @@ const app = express();
 const port = process.env.PORT || 3000;
 const portForward = false; // Set to true if you want to use port forwarding
 
-export { app, port, portForward, chalk, cookieParser };
+export { app, port, portForward, chalk, cookieParser, express };

@@ -2,7 +2,7 @@
 console.time("Loading time");
 
 // Import data from appConfig.js
-import { app, port, portForward, chalk, cookieParser } from "./appConfig.js";
+import { app, port, portForward, chalk, cookieParser, express } from "./appConfig.js";
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
