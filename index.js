@@ -38,7 +38,7 @@ app.post("/book", (req, res) => {
         return res.status(400).send("All fields are required.");
     }
 
-    info(`Booking submitted. Name: ${chalk.dim(name)}, Email: ${chalk.dim(email)}, Phone: ${chalk.dim(phone)}, Date: ${chalk.dim(date)}, Time: ${chalk.dim(time)}`);
+    info(`Booking submitted.`);
 
     // Render a confirmation page or send a success message
     res.render("booking-confirmation.ejs", {
