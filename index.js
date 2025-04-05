@@ -51,5 +51,7 @@ app.listen(port, () => {
     // log info usage log details
     console.log(`The page loadings will be logged underneath.`)
     console.log(``);
+    console.timeEnd("Loading time");
+    console.log(``);
     console.log(``);
 });
