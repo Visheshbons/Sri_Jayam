@@ -6,7 +6,6 @@ import { app, port, portForward, chalk, cookieParser, express, getDateAndTime, l
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
@@ -18,7 +17,10 @@ app.get("/", (req, res) => {
 
 // Redirect to "/contact"
 app.get("/contact", (req, res) => {
-    res.render("contact.ejs");
+    res.render("contact.ejs", {
+        email: `ceo.srijayambeautyparlour@gmail.com`,
+        phone: `Error404: Not found`,
+    });
     info(`Contact page loaded`);
 });
 
