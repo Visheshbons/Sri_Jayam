@@ -12,18 +12,25 @@ app.use(cookieParser());
 // Redirect to "/"
 app.get("/", (req, res) => {
     res.render("index.ejs");
+    info(`Home page loaded`);
 });
 
 app.get("/services", (req, res) => {
     res.render("404.ejs");
+    // info(`Services page loaded`);
+    err(`Services page not found`, `low`);
 });
 
 app.get("/about", (req, res) => {
-    res.render("404.ejs");
+    res.render("404.ejs"); 
+    // info(`About page loaded`);
+    err(`About page not found`, `low`);
 });
 
 app.get("/contact", (req, res) => {
     res.render("404.ejs");
+    // info(`Contact page loaded`);
+    err(`Contact page not found`, `low`);
 });
 
 // Listen to port
@@ -50,8 +57,8 @@ app.listen(port, () => {
 
     // log log types
     info(`Here is some ${green(`info`)}`);
-    warn(`This is a warning`);
-    err(`This is an error`);
+    warn(`This is a warning`, `low`);
+    err(`This is an error`, `low`);
     space(1)
 
     // log info usage log details
@@ -71,6 +78,6 @@ setInterval(() => {
             time("Ping Interval");
         })
         .catch(err => {
-            err("Ping failed:", err);
+            err(("Ping failed:", err), "high");
         });
 }, 600000); // 600,000 milliseconds = 10 minutes

@@ -10,8 +10,26 @@ const portForward = false; // Set to true if you want to use port forwarding
 
 const log = (message) => console.log(message);
 const info = (message) => console.log(`${chalk.cyan("Info:")} ${message}`);
-const err = (message) => console.log(`${chalk.bgRed.yellowBright("Error:")} ${chalk.red(message)}`);
-const warn = (message) => console.log(`${chalk.bgYellow.black("Warning:")} ${chalk.yellowBright(message)}`);
+
+const err = (message, urgency) => {
+    if (urgency === "high") {
+        console.log(chalk.bgRed.yellowBright("FATAL:") + " " + chalk.red(message));
+    } else if (urgency === "low") {
+        console.log(chalk.bgRed.yellowBright("Error:") + " " + chalk.red(message));
+    } else {
+        console.log(chalk.red(message));
+    }
+};
+
+const warn = (message, urgency) => {
+    if (urgency === "high") {
+        console.log(chalk.bgRedBright.yellowBright("WARN:") + " " + chalk.yellow(message));
+    } else if (urgency === "low") {
+        console.log(chalk.bgYellow("Warn:") + " " + chalk.yellow(message));
+    } else {
+        console.log(chalk.yellow(message));
+    }
+}
 
 const green = chalk.greenBright;
 
