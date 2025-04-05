@@ -15,27 +15,23 @@ app.get("/", (req, res) => {
     info(`Home page loaded`);
 });
 
-app.get("/services", (req, res) => {
-    res.render("404.ejs");
-    // info(`Services page loaded`);
-    err(`Services page not found`, `low`);
-});
-
-app.get("/about", (req, res) => {
-    res.render("404.ejs"); 
-    // info(`About page loaded`);
-    err(`About page not found`, `low`);
-});
-
+// Redirect to "/contact"
 app.get("/contact", (req, res) => {
-    res.render("404.ejs");
-    // info(`Contact page loaded`);
-    err(`Contact page not found`, `low`);
+    res.render("contact.ejs");
+    info(`Contact page loaded`);
+});
+
+// Redirect to "/book"
+app.get("/book", (req, res) => {
+    res.render("book.ejs");
+    info(`Booking page loaded`);
 });
 
 // Handle unspecified routes and redirect to 404.ejs
 app.use((req, res) => {
-    res.status(404).render("404.ejs");
+    res.status(404).render("404.ejs", {
+        url: req.originalUrl,
+    });
     err(`Page not found: ${req.originalUrl}`, `low`);
 });
 

@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #756d57;
+    margin-top: 77px;
+    margin: 0%;
+}
+
+.navbar {
+  position: fixed;
+  overflow: hidden;
+  background-color: #4b4328;
+  color: #C1BAA1;
+  width: 100%;
+  text-align: right;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #C1BAA1;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar h3 {
+  display: inline;
+  padding-right: 15px;
+}
+ 
+header {
+    text-align: center;
+    background-color: #C1BAA1;
+    padding-top: 25px;
+    padding-bottom: 1px;
+}
+
+header h1 {
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 1px;
+    padding-top: 45px;
+}
+
+main {
+    padding-top: 10px;
+    background-color: #C1BAA1;
+    text-align: center;
+}
+
+main table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main table td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+main table td h4 {
+    text-align: right;
+}
+
+main table td p {
+    text-align: left;
+}
+
+footer {
+    padding-top: 15px;
+    background-color: #4b4328;
+    color: #C1BAA1;
+    padding-bottom: 15px;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    font-size: 45px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+hr {
+    background-color: #4b4328;
+    margin: 0;
+    border: 0;
+    padding-top: 1px;
+}
