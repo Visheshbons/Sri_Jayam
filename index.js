@@ -47,15 +47,17 @@ app.listen(port, () => {
     space(1)
 });
 
+startTimer("Ping Interval");
+
 setInterval(() => {
     fetch("https://sri-jayam.onrender.com")
         .then(() => {
             log("SELF PING");
-            timeEnd("Ping Interval");
-            time("Ping Interval");
+            endTimer("Ping Interval");
+            startTimer("Ping Interval");
         })
-        .catch(err => {
-            err(("Ping failed:", err), "high");
+        .catch(error => {
+            err(error, `high`);
         });
 }, 600000); // 600,000 milliseconds = 10 minutes
 

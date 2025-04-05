@@ -9,15 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
     <title>Book an Appointment | Sri Jayam Beauty Parlor</title>
 </head>
-<body>
+<body style="height: 100%;">
 
     <%- include('navbar') %>
 
-    <header>
+    <header class="over center" style="padding-top: 50px;">
         <h1>Book an Appointment</h1>
     </header>
 
-    <main>
+    <main class="into center">
         <form action="/book" method="POST">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
@@ -37,7 +37,8 @@
             <input type="submit" value="Book Appointment">
         </form>
     </main>
-
+    
+<%- include('map') %>
 <%- include('footer') %>
 
 </body>
