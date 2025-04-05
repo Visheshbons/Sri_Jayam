@@ -6,6 +6,7 @@ import { app, port, portForward, chalk, cookieParser, express, getDateAndTime, l
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
@@ -25,6 +26,28 @@ app.get("/contact", (req, res) => {
 app.get("/book", (req, res) => {
     res.render("book.ejs");
     info(`Booking page loaded`);
+});
+
+// POST route for booking
+app.post("/book", (req, res) => {
+    log(req.body);
+    const { name, email, phone, date, time } = req.body;
+
+    if (!name || !email || !phone || !date || !time) {
+        err("Incomplete booking details submitted.", "low");
+        return res.status(400).send("All fields are required.");
+    }
+
+    info(`Booking submitted. Name: ${chalk.dim(name)}, Email: ${chalk.dim(email)}, Phone: ${chalk.dim(phone)}, Date: ${chalk.dim(date)}, Time: ${chalk.dim(time)}`);
+
+    // Render a confirmation page or send a success message
+    res.render("booking-confirmation.ejs", {
+        name,
+        email,
+        phone,
+        date,
+        time,
+    });
 });
 
 // Handle unspecified routes and redirect to 404.ejs
