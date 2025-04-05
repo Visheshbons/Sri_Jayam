@@ -1,15 +1,8 @@
 // Starts a timer to see how long the initialisation takes
 console.time("Loading time");
 
-// Imports all the neccecary data
-import express from 'express';
-import chalk from 'chalk';
-import cookieParser from 'cookie-parser';
-
-// Sets up some variables
-const app = express();
-const port = process.env.PORT || 3000;
-const portForward = false; // Set to true if you want to use port forwarding
+// Import data from appConfig.js
+import { app, port, portForward, chalk, cookieParser } from "./appConfig.js";
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
