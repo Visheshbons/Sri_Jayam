@@ -11,6 +11,7 @@
   "author": "Vishesh Kudva",
   "license": "ISC",
   "dependencies": {
+    "address": "^2.0.3",
     "chalk": "^5.4.1",
     "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
