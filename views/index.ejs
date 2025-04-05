@@ -11,13 +11,7 @@
 </head>
 <body>
 
-<div class="navbar">
-    <h3>Sri Jayam</h3>
-    <a href="/">Home</a>
-    <a href="/contact">Contact</a>
-    <a href="/book">Book an Appointment</a>
-    <a href="https://visheshbons.github.io/cv/">About the Developer</a>
-</div>
+    <%- include('navbar') %>
 
 <header>
     <h1>Sri Jayam</h1>
@@ -85,9 +79,8 @@
         </tbody>
     </table>
 </div>
-<footer>
-    <p>&copy; 2025 Sri Jayam Beauty Parlor. All rights reserved.</p>
-</footer>
+
+<%- include('footer') %>
 
 <script>alert("WARNING: This site is still under development. Proceed with caution.")</script>
 
