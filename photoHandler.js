@@ -14,10 +14,10 @@ app.use(cookieParser());
 app.get("/gallery", (req, res) => {
     // Render the gallery page with the photos
     res.render("photos.ejs", {
-        makeup: 0,
-        salonTreatments: 0,
-        waxing: 0,
-        tailoring: 0,
-        embroidery: 0,
+        makeup: 3,
+        salonTreatments: 3,
+        waxing: 3,
+        tailoring: 3,
+        embroidery: 3,
     });
 });

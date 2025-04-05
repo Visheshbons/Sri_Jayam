@@ -29,7 +29,7 @@
             <% for (let i = 0; i < makeup; i++) { %>
                 <% let num = i + 1; %>
                 <% let bridal = `makeup/${num}.jpg`; %>
-                <img src="<%- bridal %>" alt="Makeup">
+                <img src="<%- bridal %>" alt="Makeup" onerror="this.src='/placeholder.jpg';" class="gallery-img">
             <% }; %>
             <br>
 
@@ -38,7 +38,7 @@
             <% for (let i = 0; i < salonTreatments; i++) { %>
                 <% let num = i + 1; %>
                 <% let salon = `salonTreatments/${num}.jpg`; %>
-                <img src="<%- salon %>" alt="Salon Treatments">
+                <img src="<%- salon %>" alt="Salon Treatments" onerror="this.src='/placeholder.jpg';" class="gallery-img">
             <% }; %>
             <br>
 
@@ -47,7 +47,7 @@
             <% for (let i = 0; i < waxing; i++) { %>
                 <% let num = i + 1; %>
                 <% let wax = `waxing/${num}.jpg`; %>
-                <img src="<%- wax %>" alt="Professional Waxing">
+                <img src="<%- wax %>" alt="Professional Waxing" onerror="this.src='/placeholder.jpg';" class="gallery-img">
             <% }; %>
             <br>
             
@@ -56,7 +56,7 @@
             <% for (let i = 0; i < tailoring; i++) { %>
                 <% let num = i + 1; %>
                 <% let tailor = `tailoring/${num}.jpg`; %>
-                <img src="<%- tailor %>" alt="Tailoring Services">
+                <img src="<%- tailor %>" alt="Tailoring Services" onerror="this.src='/placeholder.jpg';" class="gallery-img">
             <% }; %>
             <br>
 
@@ -65,7 +65,7 @@
             <% for (let i = 0; i < embroidery; i++) { %>
                 <% let num = i + 1; %>
                 <% let embroider = `embroidery/${num}.jpg`; %>
-                <img src="<%- embroider %>" alt="Embroidery Services">
+                <img src="<%- embroider %>" alt="Embroidery Services" onerror="this.src='/placeholder.jpg';" class="gallery-img">
             <% }; %>
             <br>
         </div>
