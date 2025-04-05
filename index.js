@@ -10,6 +10,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
+// Sets up some variables
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
+
 // Redirect to "/"
 app.get("/", (req, res) => {
     res.render("index.ejs");
