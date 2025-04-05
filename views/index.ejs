@@ -82,7 +82,9 @@
 
 <%- include('footer') %>
 
-<script>alert("WARNING: This site is still under development. Proceed with caution.")</script>
+<% if (visited) { %>
+    <script>alert("WARNING: This site is still under development. Proceed with caution.")</script>
+<% } %>
 
 </body>
 </html>

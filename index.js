@@ -11,7 +11,17 @@ app.use(cookieParser());
 
 // Redirect to "/"
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    // Check if the user has already visited the site
+    if (req.cookies.visited == `true`) {
+        res.render("index.ejs", {
+            visited: false,
+        });
+    } else {
+        res.cookie(`visited`, `true`);
+        res.render("index.ejs", {
+            visited: true,
+        });
+    }
     info(`Home page loaded`);
 });
 
