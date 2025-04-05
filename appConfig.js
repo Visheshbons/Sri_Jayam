@@ -10,6 +10,7 @@ const portForward = false; // Set to true if you want to use port forwarding
 
 const log = (message) => console.log(message);
 const info = (message) => console.log(`${chalk.cyan("Info:")} ${message}`);
+const important = (message) => console.log(chalk.bgCyan.whiteBright("IMPORTANT:") + " " + chalk.cyan(message));
 
 const err = (message, urgency) => {
     if (urgency === "high") {
@@ -106,4 +107,4 @@ function getDateAndTime() {
     return dateAndTime;
 };
 
-export { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, green, space, line };
+export { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, green, space, line, important };

@@ -2,7 +2,7 @@
 startTimer("Loading time");
 
 // Import data from appConfig.js
-import { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, green, space, line, } from "./appConfig.js";
+import { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, green, space, line, important } from "./appConfig.js";
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
@@ -38,7 +38,7 @@ app.post("/book", (req, res) => {
         return res.status(400).send("All fields are required.");
     }
 
-    info(`Booking submitted.`);
+    important(`Booking submitted.`);
 
     // Render a confirmation page or send a success message
     res.render("booking-confirmation.ejs", {
@@ -82,6 +82,7 @@ app.listen(port, () => {
 
     // log log types
     info(`Here is some ${green(`info`)}`);
+    important(`This is important`);
     warn(`This is a warning`, `low`);
     err(`This is an error`, `low`);
     space(1)
