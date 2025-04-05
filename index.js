@@ -9,31 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
-// Render "/"
-app.get("/", (req, res) => {
-    // Check if the user has already visited the site
-    if (req.cookies.visited == `true`) {
-        res.render("index.ejs", {
-            visited: false,
-        });
-    } else {
-        res.cookie(`visited`, `true`);
-        res.render("index.ejs", {
-            visited: true,
-        });
-    }
-    info(`Home page loaded`);
-});
-
-// Redirect to "/contact"
-app.get("/contact", (req, res) => {
-    res.render("contact.ejs", {
-        email: `ceo.srijayambeautyparlour@gmail.com`,
-        phone: `Error404: Not found`,
-    });
-    info(`Contact page loaded`);
-});
-
 // Listen to port
 app.listen(port, () => {
     // log server start
@@ -86,4 +61,6 @@ setInterval(() => {
 
 
 // Imports the other JS files so that seperate APIs can be used
+import './homePageHandler.js';
 import './bookHandler.js';
+import './404Handler.js';

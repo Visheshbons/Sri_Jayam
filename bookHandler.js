@@ -42,13 +42,3 @@ app.post("/book", (req, res) => {
         });
     };
 });
-
-// Handle unspecified routes and redirect to 404.ejs
-app.use((req, res) => {
-    res.status(404).render("404.ejs", {
-        url: req.originalUrl,
-    });
-    if (req.originalUrl == "/" || req.originalUrl == "/book" || req.originalUrl == "/contact") {
-        err(`Page not found: ${req.originalUrl}`, `high`);
-    };
-});
