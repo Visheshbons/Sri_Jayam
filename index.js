@@ -5,15 +5,15 @@ console.time("Loading time");
 import chalk from 'chalk';
 import cookieParser from 'cookie-parser';
 
-// Quickly sets up cookies and static files
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
-app.use(cookieParser());
-
 // Sets up some variables
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Quickly sets up cookies and static files
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.use(cookieParser());
 
 // Redirect to "/"
 app.get("/", (req, res) => {
