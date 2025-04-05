@@ -2,7 +2,7 @@
 console.time("Loading time");
 
 // Import data from appConfig.js
-import { app, port, portForward, chalk, cookieParser, express } from "./appConfig.js";
+import { app, port, portForward, chalk, cookieParser, express, getDateAndTime } from "./appConfig.js";
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
@@ -33,7 +33,7 @@ app.listen(port, () => {
     console.log(``);
 
     // log date and time
-    console.log(`Time of start: `);
+    console.log(`Time of start: ${chalk.dim(getDateAndTime())}`);
     console.log(``);
 
     // log website info
