@@ -9,74 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
-// Redirect to "/"
-app.get("/", (req, res) => {
-    // Check if the user has already visited the site
-    if (req.cookies.visited == `true`) {
-        res.render("index.ejs", {
-            visited: false,
-        });
-    } else {
-        res.cookie(`visited`, `true`);
-        res.render("index.ejs", {
-            visited: true,
-        });
-    }
-    info(`Home page loaded`);
-});
-
-// Redirect to "/contact"
-app.get("/contact", (req, res) => {
-    res.render("contact.ejs", {
-        email: `ceo.srijayambeautyparlour@gmail.com`,
-        phone: `Error404: Not found`,
-    });
-    info(`Contact page loaded`);
-});
-
-// Redirect to "/book"
-app.get("/book", (req, res) => {
-    res.render("book.ejs");
-    info(`Booking page loaded`);
-});
-
-// POST route for booking
-app.post("/book", (req, res) => {
-    // Check if the request body contains all required fields
-    if (req.cookies.booked == `true`) {
-        return res.status(400).redirect("/");
-        err("Booking already submitted.", "low");
-    } else {
-        res.cookie(`booked`, `true`);
-        log(req.body);
-        const { name, email, phone, date, time } = req.body;
-    
-        if (!name || !email || !phone || !date || !time) {
-            err("Incomplete booking details submitted.", "low");
-            return res.status(400).send("All fields are required.");
-        }
-    
-        important(`Booking submitted.`);
-    
-        // Render a confirmation page or send a success message
-        res.render("booking-confirmation.ejs", {
-            name,
-            email,
-            phone,
-            date,
-            time,
-        });
-    };
-});
-
-// Handle unspecified routes and redirect to 404.ejs
-app.use((req, res) => {
-    res.status(404).render("404.ejs", {
-        url: req.originalUrl,
-    });
-    err(`Page not found: ${req.originalUrl}`, `low`);
-});
-
 // Listen to port
 app.listen(port, () => {
     // log server start
@@ -126,3 +58,9 @@ setInterval(() => {
             err(("Ping failed:", err), "high");
         });
 }, 600000); // 600,000 milliseconds = 10 minutes
+
+
+// Imports the other JS files so that seperate APIs can be used
+import './homePageHandler.js';
+import './bookHandler.js';
+import './404Handler.js';
