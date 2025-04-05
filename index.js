@@ -30,7 +30,7 @@ app.listen(port, () => {
     space(1)
 
     // log log types
-    info(`Here is some ${green(`info`)}`);
+    info(`Here is some ${chalk.green("info")}`);
     important(`This is important`);
     warn(`This is a warning`, `low`);
     err(`This is an error`, `low`);

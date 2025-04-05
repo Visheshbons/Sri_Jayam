@@ -9,8 +9,8 @@ const port = process.env.PORT || 3000;
 const portForward = false; // Set to true if you want to use port forwarding
 
 const log = console.log;
-const info = (message) => log(`${chalk.cyan("Info:")} ${message}`);
-const important = (message) => log(`${chalk.bgCyan.whiteBright("IMPORTANT:")} ${chalk.cyan(message)}`);
+const info = (message) => log(`${chalk.blue("Info:")} ${chalk.white(message)}`);
+const important = (message) => log(`${chalk.bgBlue.whiteBright("IMPORTANT:")} ${chalk.blue(message)}`);
 
 const green = (message) => log(`${chalk.green(message)}`);
 
