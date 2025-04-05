@@ -14,6 +14,18 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
+app.get("/services", (req, res) => {
+    res.render("404.ejs");
+});
+
+app.get("/about", (req, res) => {
+    res.render("404.ejs");
+});
+
+app.get("/contact", (req, res) => {
+    res.render("404.ejs");
+});
+
 // Listen to port
 app.listen(port, () => {
     // log server start
