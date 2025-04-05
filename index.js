@@ -20,10 +20,8 @@ app.listen(port, () => {
     space(1)
 
     // log website info
-    log(`Go to ` + chalk.dim(`http://localhost:${port}`) + ` to view the website.`);
-    if (portForward) {
-        log(`Go to ${chalk.dim(`https://p9npwlmh-${port}.aue.devtunnels.ms/`)} to view the website.`);
-    };
+    log(`Go to ${chalk.dim(`http://localhost:${port}`)} to view the website.`);
+    log(`Go to ${chalk.dim(`https://sri-jayam.onrender.com`)} to view the website.`);
     space(1)
 
     // log server commands
