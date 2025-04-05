@@ -14,9 +14,9 @@ app.use((req, res) => {
         url: req.originalUrl,
     });
     if (req.originalUrl == "/" || req.originalUrl == "/book" || req.originalUrl == "/contact") {
-        err(`Page not found: ${req.originalUrl}`, `high`);
+        err(`404: ${req.originalUrl}`, `high`);
     } else {
-        err(`Page not found: ${req.originalUrl}`, `low`);
+        err(`404: ${req.originalUrl}`, `low`);
     }
-    warn(`404 page loaded`, `low`);
+    warn(`ERR404 catcher activated`, `low`);
 });
