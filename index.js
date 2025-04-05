@@ -33,6 +33,12 @@ app.get("/contact", (req, res) => {
     err(`Contact page not found`, `low`);
 });
 
+// Handle unspecified routes and redirect to 404.ejs
+app.use((req, res) => {
+    res.status(404).render("404.ejs");
+    err(`Page not found: ${req.originalUrl}`, `low`);
+});
+
 // Listen to port
 app.listen(port, () => {
     // log server start
