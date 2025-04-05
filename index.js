@@ -1,8 +1,8 @@
 // Starts a timer to see how long the initialisation takes
-console.time("Loading time");
+startTimer("Loading time");
 
 // Import data from appConfig.js
-import { app, port, portForward, chalk, cookieParser, express, getDateAndTime } from "./appConfig.js";
+import { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, green } from "./appConfig.js";
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
@@ -29,29 +29,46 @@ app.get("/contact", (req, res) => {
 // Listen to port
 app.listen(port, () => {
     // log server start
-    console.log(`Server running on port ` + chalk.green(port) + `.`);
-    console.log(``);
+    log(`Server running on port ` + chalk.green(port) + `.`);
+    log(``);
 
     // log date and time
-    console.log(`Time of start: ${chalk.dim(getDateAndTime())}`);
-    console.log(``);
+    log(`Time of start: ${chalk.dim(getDateAndTime())}`);
+    log(``);
 
     // log website info
-    console.log(`Go to ` + chalk.dim(`http://localhost:${port}`) + ` to view the website.`);
+    log(`Go to ` + chalk.dim(`http://localhost:${port}`) + ` to view the website.`);
     if (portForward) {
-        console.log(`Go to ${chalk.dim(`https://p9npwlmh-${port}.aue.devtunnels.ms/`)} to view the website.`);
+        log(`Go to ${chalk.dim(`https://p9npwlmh-${port}.aue.devtunnels.ms/`)} to view the website.`);
     };
-    console.log(``);
+    log(``);
 
     // log server commands
-    console.log(`Type "rs" to restart the server.`);
-    console.log(`Press CTRL + C to kill the server.`);
-    console.log(``);
+    log(`Type "rs" to restart the server.`);
+    log(`Press CTRL + C to kill the server.`);
+    log(``);
+
+    // log log types
+    info(`Here is some ${green(`info`)}`);
+    warn(`This is a warning`);
+    err(`This is an error`);
 
     // log info usage log details
-    console.log(`The page loadings will be logged underneath.`)
-    console.log(``);
-    console.timeEnd("Loading time");
-    console.log(``);
-    console.log(``);
+    log(`The page loadings will be logged underneath.`)
+    log(``);
+    endTimer("Loading time");
+    log(``);
+    log(``);
 });
+
+setInterval(() => {
+    fetch("https://sri-jayam.onrender.com")
+        .then(() => {
+            log("SELF PING");
+            timeEnd("Ping Interval");
+            time("Ping Interval");
+        })
+        .catch(err => {
+            err("Ping failed:", err);
+        });
+}, 600000); // 600,000 milliseconds = 10 minutes

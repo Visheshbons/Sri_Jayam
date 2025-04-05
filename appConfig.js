@@ -8,6 +8,16 @@ const app = express();
 const port = process.env.PORT || 3000;
 const portForward = false; // Set to true if you want to use port forwarding
 
+const log = (message) => console.log(message);
+const info = (message) => console.log(`${chalk.bgCyan.black("Info:")} ${chalk.dim(message)}`);
+const err = (message) => console.log(`${chalk.bgRed.yellowBright("Error:")} ${chalk.red(message)}`);
+const warn = (message) => console.log(`${chalk.bgYellow.black("Warning:")} ${chalk.yellowBright(message)}`);
+
+const green = chalk.greenBright;
+
+const startTimer = (message) => console.time(message);
+const endTimer = (message) => console.timeEnd(message);
+
 // Define the function "getDateAndTime()"
 function getDateAndTime() {
     // get current date
@@ -66,4 +76,4 @@ function getDateAndTime() {
     return dateAndTime;
 };
 
-export { app, port, portForward, chalk, cookieParser, express, getDateAndTime };
+export { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, green };
