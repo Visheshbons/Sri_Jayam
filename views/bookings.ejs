@@ -22,9 +22,6 @@
     <div class="over">
     <% Object.keys(bookings).forEach((key) => { %>
         <h3>Booking No. <%- key %></h3>
-        <p>Name: <%- bookings[key].name %></p>
-        <p>Email: <%- bookings[key].email %></p>
-        <p>Phone: <%- bookings[key].phone %></p>
         <p>Date: <%- bookings[key].date %></p>
         <p>Time: <%- bookings[key].time %></p>
     <% }); %>

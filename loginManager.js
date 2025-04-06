@@ -10,7 +10,7 @@ let logon = false;
 // Renders "/login.js"
 app.get("/login", (req, res) => {
     res.render("login.ejs");
-    log(`Login page loaded. (${LLC})`);
+    info(`Login page loaded. (${LLC})`);
     LLC++;
 });
 
@@ -44,16 +44,4 @@ app.post("/LogoutFunc", (req, res) => {
     console.log(chalk.italic(getDateAndTime()));
     res.redirect("/")
     console.log(``)
-});
-
-app.get("/admin", (req, res) => {
-    if (req.cookies.username === users.username) {
-        res.render("admin.ejs", {
-            null: null,
-        });
-        log(`Admin page loaded.`);
-    } else {
-        res.redirect("/login");
-        warn(`Attempted access to admin page without login.`, `high`);
-    };
 });
