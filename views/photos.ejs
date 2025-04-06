@@ -26,37 +26,57 @@
         <div class="into center">
             <h3>Expert Makeup</h3>
             <p>Transform your special day with our expert makeup skills.</p>
-            <% for (let i = 0; i < photos.makeup.length; i++) { %>
-                <img src="<%- photos.makeup[i] %>" alt="<%- photos.makeup[i] %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
-            <% }; %>
+            <% if (photos.makeup.length === 0) { %>
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+            <% } else { %>
+                <% for (let i = 0; i < photos.makeup.length; i++) { %>
+                    <img src="<%- photos.makeup[i] %>" alt="<%- photos.makeup[i] %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% }; %>
+            <% } %>
             <br>
 
             <h3>Salon Treatments</h3>
             <p>Enjoy a range of services, from facials to hair care.</p>
-            <% for (let i = 0; i < photos.salonTreatments.length; i++) { %>
-                <img src="<%- photos.salonTreatments[i] %>" alt="<%- photos.salonTreatments[i] %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
-            <% }; %>
+            <% if (photos.salonTreatments.length === 0) { %>
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+            <% } else { %>
+                <% for (let i = 0; i < photos.salonTreatments.length; i++) { %>
+                    <img src="<%- photos.salonTreatments[i] %>" alt="<%- photos.salonTreatments[i] %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% }; %>
+            <% } %>
             <br>
 
             <h3>Professional Waxing</h3>
             <p>Experience waxing, unparalleled by anyone else.</p>
-            <% for (let i = 0; i < photos.waxing.length; i++) { %>
-                <img src="<%- photos.waxing[i] %>" alt="Waxing Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
-            <% }; %>
+            <% if (photos.waxing.length === 0) { %>
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+            <% } else { %>
+                <% for (let i = 0; i < photos.waxing.length; i++) { %>
+                    <img src="<%- photos.waxing[i] %>" alt="Waxing Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% }; %>
+            <% } %>
             <br>
             
             <h3>Tailoring Services</h3>
             <p>We offer precise tailoring for all your needs.</p>
-            <% for (let i = 0; i < photos.tailoring.length; i++) { %>
-                <img src="<%- photos.tailoring[i] %>" alt="Tailoring Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
-            <% }; %>
+            <% if (photos.tailoring.length === 0) { %>
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+            <% } else { %>
+                <% for (let i = 0; i < photos.tailoring.length; i++) { %>
+                    <img src="<%- photos.tailoring[i] %>" alt="Tailoring Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% }; %>
+            <% } %>
             <br>
 
             <h3>Embroidery Services</h3>
             <p>Our embroidery services are detailed and high-quality.</p>
-            <% for (let i = 0; i < photos.embroidery.length; i++) { %>
-                <img src="<%- photos.embroidery[i] %>" alt="Embroidery Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
-            <% }; %>
+            <% if (photos.embroidery.length === 0) { %>
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+            <% } else { %>
+                <% for (let i = 0; i < photos.embroidery.length; i++) { %>
+                    <img src="<%- photos.embroidery[i] %>" alt="Embroidery Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% }; %>
+            <% } %>
             <br>
         </div>
 
