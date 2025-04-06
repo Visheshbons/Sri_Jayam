@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
     res.render("index.ejs", {
          visited: visited,
          photos: images,
+         placeholder: "placeholder.jpg",
         });
     info(`Home page loaded`);
 });

@@ -149,6 +149,10 @@ img {
     padding-left: 10%; /* Reduce padding to balance alignment */
   }
 
+tr .right {
+  text-align: left;
+}
+
 table {
     margin: auto; /* Centers the table horizontally */
     border-collapse: collapse; /* Optional: Makes the table look cleaner */

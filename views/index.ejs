@@ -34,7 +34,7 @@
                 <td class="right">
                     <div class="img">
                         <% if (photos.makeup.length == 0) { %>
-                            <img src="https://placehold.co/400" alt="Expert Makeup">
+                            <img src="<%- placeholder %>" alt="Expert Makeup">
                         <% } else { %>
                                 <img src="<%= photos.makeup[1] %>" alt="Expert Makeup (image number <%= i + 1 %>)">
                         <% } %>
@@ -45,7 +45,7 @@
                 <td class="left">
                     <div class="img">
                         <% if (photos.salonTreatments.length == 0) { %>
-                            <img src="https://placehold.co/400" alt="Salon Treatments">
+                            <img src="<%- placeholder %>" alt="Salon Treatments">
                         <% } else { %>
                             <img src="<%= photos.salonTreatments[0] %>" alt="Salon Treatments (image number 1)">
                         <% } %>
@@ -64,7 +64,7 @@
                 <td class="right">
                     <div class="img">
                         <% if (photos.waxing.length == 0) { %>
-                            <img src="https://placehold.co/400" alt="Professional Waxing">
+                            <img src="<%- placeholder %>" alt="Professional Waxing">
                         <% } else { %>
                             <img src="<%= photos.waxing[0] %>" alt="Professional Waxing (image number 1)">
                         <% } %>
@@ -75,7 +75,7 @@
                 <td class="left">
                     <div class="img">
                         <% if (photos.tailoring.length == 0) { %>
-                            <img src="https://placehold.co/400" alt="Tailoring Services">
+                            <img src="<%- placeholder %>" alt="Tailoring Services">
                         <% } else { %>
                             <img src="<%= photos.tailoring[0] %>" alt="Tailoring Services (image number 1)">
                         <% } %>
@@ -94,7 +94,7 @@
                 <td class="right">
                     <div class="img">
                         <% if (photos.embroidery.length == 0) { %>
-                            <img src="https://placehold.co/400" alt="Embroidery Designs">
+                            <img src="<%- placeholder %>" alt="Embroidery Designs">
                         <% } else { %>
                             <img src="<%= photos.embroidery[0] %>" alt="Embroidery Designs (image number 1)">
                         <% } %>
