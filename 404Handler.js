@@ -1,10 +1,9 @@
 // Import data from appConfig.js
-import { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, green, space, line, important } from "./appConfig.js";
+import { app, chalk, express, log, err, warn, info, important } from "./appConfig.js";
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use(cookieParser());
 
 // Handle unspecified routes and redirect to 404.ejs
 app.use((req, res) => {

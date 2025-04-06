@@ -1,5 +1,5 @@
 // Import data from appConfig.js
-import { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, green, space, line, important } from "./appConfig.js";
+import { app, chalk, cookieParser, express, log, err, warn, info, important, images } from "./appConfig.js";
 
 // Quickly sets up cookies and static files
 app.use(express.urlencoded({ extended: true }));
@@ -12,7 +12,10 @@ app.get("/", (req, res) => {
     if (!visited) {
         res.cookie("visited", "true");
     }
-    res.render("index.ejs", { visited });
+    res.render("index.ejs", {
+         visited: visited,
+         photos: images,
+        });
     info(`Home page loaded`);
 });
 

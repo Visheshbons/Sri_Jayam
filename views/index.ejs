@@ -28,19 +28,27 @@
         <tbody>
             <tr>
                 <td class="tr left">
-                    <h4><b>Bridal Makeup:</b></h4>
+                    <h4><b>Expert Makeup:</b></h4>
                     <p>Transform your special day with our expert bridal makeup.</p>
                 </td>
                 <td class="right">
                     <div class="img">
-                        <img src="Indian_Bride_Blended.png" alt="Bridal Makeup">
+                        <% if (photos.makeup.length == 0) { %>
+                            <img src="https://placehold.co/400" alt="Expert Makeup">
+                        <% } else { %>
+                                <img src="<%= photos.makeup[1] %>" alt="Expert Makeup (image number <%= i + 1 %>)">
+                        <% } %>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td class="left">
                     <div class="img">
-                        <img src="Indian_Beauty_Salon_Blended.png" alt="Salon Treatments">
+                        <% if (photos.salonTreatments.length == 0) { %>
+                            <img src="https://placehold.co/400" alt="Salon Treatments">
+                        <% } else { %>
+                            <img src="<%= photos.salonTreatments[0] %>" alt="Salon Treatments (image number 1)">
+                        <% } %>
                     </div>
                 </td>
                 <td class="right tr">
@@ -48,12 +56,6 @@
                     <p>Enjoy a range of services, from facials to hair care.</p>
                 </td>
             </tr>
-<!--
-            The Manucure and Pedicure are not yet available, and hve been removed.
-
-        -->
-
-
             <tr>
                 <td class="tr left">
                     <h4><b>Professional Waxing:</b></h4>    
@@ -61,19 +63,42 @@
                 </td>
                 <td class="right">
                     <div class="img">
-                        <img src="https://placehold.co/400" alt="Professional Waxing">
+                        <% if (photos.waxing.length == 0) { %>
+                            <img src="https://placehold.co/400" alt="Professional Waxing">
+                        <% } else { %>
+                            <img src="<%= photos.waxing[0] %>" alt="Professional Waxing (image number 1)">
+                        <% } %>
                     </div>
                 </td>        
             </tr>
             <tr>
                 <td class="left">
                     <div class="img">
-                        <img src="https://placehold.co/400" alt="Pre-Bridal Grooming">
+                        <% if (photos.tailoring.length == 0) { %>
+                            <img src="https://placehold.co/400" alt="Tailoring Services">
+                        <% } else { %>
+                            <img src="<%= photos.tailoring[0] %>" alt="Tailoring Services (image number 1)">
+                        <% } %>
                     </div>
                 </td>
                 <td class="right tr">
-                    <h4><b>Pre-Bridal Grooming:</b></h4>
-                    <p>Get ready for your big day with our tailored packages.</p>
+                    <h4><b>Tailoring Services:</b></h4>
+                    <p>Custom stitching and alterations tailored to your needs.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="tr left">
+                    <h4><b>Embroidery Designs:</b></h4>
+                    <p>Beautiful and intricate embroidery patterns for every occasion.</p>
+                </td>
+                <td class="right">
+                    <div class="img">
+                        <% if (photos.embroidery.length == 0) { %>
+                            <img src="https://placehold.co/400" alt="Embroidery Designs">
+                        <% } else { %>
+                            <img src="<%= photos.embroidery[0] %>" alt="Embroidery Designs (image number 1)">
+                        <% } %>
+                    </div>
                 </td>
             </tr>
         </tbody>
