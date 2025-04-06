@@ -64,4 +64,5 @@ setInterval(() => {
 import './homePageHandler.js';
 import './bookHandler.js';
 import './photoHandler.js';
+import './loginManager.js';
 import './404Handler.js';
