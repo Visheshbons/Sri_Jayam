@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 app.get("/contact", (req, res) => {
     res.render("contact.ejs", {
         email: `ceo.srijayambeautyparlour@gmail.com`,
-        phone: `Error404: Not found`,
+        phone: null,
     });
     info(`Contact page loaded`);
 });

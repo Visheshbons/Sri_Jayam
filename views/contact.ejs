@@ -25,7 +25,11 @@
                     <h4>Ph:</h4>
                 </td>
                 <td>
-                    <p id="phone"><%- phone %></p>
+                    <% if (phone) { %>
+                        <p id="phone"><%- phone %></p>
+                    <% } else { %>
+                        <p id="phone">404 - Phone number not available</p>
+                    <% } %>
                 </td>
             </tr>
             <tr>
@@ -33,7 +37,11 @@
                     <h4>Email:</h4>
                 </td>
                 <td>
-                    <p id="email"><%- email %></p>
+                    <% if (email) { %>
+                        <p id="email"><%- email %></p>
+                    <% } else { %>
+                        <p id="email">404 - Email not available</p>
+                    <% } %>
                 </td>
             </tr>
         </tbody>
@@ -50,17 +58,7 @@
 
 <%- include('footer') %>
 
-<script src="booking.js"></script>
 
-<script>
-
-    const phoneNum = document.getElementById('phone');
-    phoneNum.textContent = phoneVar;
-
-    const emailId = document.getElementById('email');
-    emailId.textContent = emailVar;
-
-</script>
 
 </body>
 </html>
