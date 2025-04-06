@@ -37,4 +37,22 @@ function getDateAndTime() {
     return `${date} ${time}`;
 }
 
-export { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, space, line, important, green };
+const images = {
+    makeup: [
+        // No images yet...
+    ],
+    salonTreatments: [
+        "salonTreatments/eyebrow-treatment.jpg",
+    ],
+    waxing: [
+        // No images yet...
+    ],
+    tailoring: [
+        // No images yet...
+    ],
+    embroidery: [
+        // No images yet...
+    ],
+};
+
+export { app, port, portForward, chalk, cookieParser, express, getDateAndTime, log, err, warn, info, startTimer, endTimer, space, line, important, green, images };
