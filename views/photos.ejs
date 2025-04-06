@@ -27,7 +27,7 @@
             <h3>Expert Makeup</h3>
             <p>Transform your special day with our expert makeup skills.</p>
             <% if (photos.makeup.length === 0) { %>
-                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img" title="No photos found!">
             <% } else { %>
                 <% for (let i = 0; i < photos.makeup.length && i <= 20; i++) { %>
                     <img src="<%- photos.makeup[i] %>" alt="<%- photos.makeup[i] %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.makeup[i] %>">
@@ -38,7 +38,7 @@
             <h3>Salon Treatments</h3>
             <p>Enjoy a range of services, from facials to hair care.</p>
             <% if (photos.salonTreatments.length === 0) { %>
-                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img" title="No photos found!">
             <% } else { %>
                 <% for (let i = 0; i < photos.salonTreatments.length && i <= 20; i++) { %>
                     <img src="<%- photos.salonTreatments[i] %>" alt="Salon Treatment <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.salonTreatments[i] %>">
@@ -49,7 +49,7 @@
             <h3>Professional Waxing</h3>
             <p>Experience waxing, unparalleled by anyone else.</p>
             <% if (photos.waxing.length === 0) { %>
-                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img" title="No photos found!">
             <% } else { %>
                 <% for (let i = 0; i < photos.waxing.length && i <= 20; i++) { %>
                     <img src="<%- photos.waxing[i] %>" alt="Waxing Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.waxing[i] %>">
@@ -60,7 +60,7 @@
             <h3>Tailoring Services</h3>
             <p>We offer precise tailoring for all your needs.</p>
             <% if (photos.tailoring.length === 0) { %>
-                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img" title="No photos found!">
             <% } else { %>
                 <% for (let i = 0; i < photos.tailoring.length && i <= 20; i++) { %>
                     <img src="<%- photos.tailoring[i] %>" alt="Tailoring Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.tailoring[i] %>">
@@ -71,7 +71,7 @@
             <h3>Embroidery Services</h3>
             <p>Our embroidery services are detailed and high-quality.</p>
             <% if (photos.embroidery.length === 0) { %>
-                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
+                <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img" title="No photos found!">
             <% } else { %>
                 <% for (let i = 0; i < photos.embroidery.length && i <= 20; i++) { %>
                     <img src="<%- photos.embroidery[i] %>" alt="Embroidery Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.embroidery[i] %>">
