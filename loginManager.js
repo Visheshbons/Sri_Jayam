@@ -1,5 +1,6 @@
 // Imports required data
-import { app, users, getDateAndTime, SHA1, log, warn, err, important } from './appConfig.js';
+import { app, users, getDateAndTime, log, warn, err, important } from './appConfig.js';
+import { SHA1 } from './SHA1.js';
 import chalk from 'chalk';
 
 // Replaces constants with variables
