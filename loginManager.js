@@ -1,5 +1,5 @@
 // Imports required data
-import { app, users, getDateAndTime, log, warn, err, important } from './appConfig.js';
+import { app, users, getDateAndTime, log, warn, err, important, info } from './appConfig.js';
 import { SHA1 } from './SHA1.js';
 import chalk from 'chalk';
 
@@ -31,7 +31,7 @@ app.post("/login", (req, res) => {
 
         if (!logon){
             res.redirect("/");
-            warn(`Attempted login with username "${req.body.username}" and password "${req.body.password}.`, `high`);
+            warn(`Attempted login with username "${req.body.username}" and password "${req.body.password}".`, `high`);
         };
     };
 });
