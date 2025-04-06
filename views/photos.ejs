@@ -29,8 +29,8 @@
             <% if (photos.makeup.length === 0) { %>
                 <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
             <% } else { %>
-                <% for (let i = 0; i < photos.makeup.length; i++) { %>
-                    <img src="<%- photos.makeup[i] %>" alt="<%- photos.makeup[i] %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% for (let i = 0; i < photos.makeup.length && i <= 20; i++) { %>
+                    <img src="<%- photos.makeup[i] %>" alt="<%- photos.makeup[i] %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.makeup[i] %>">
                 <% }; %>
             <% } %>
             <br>
@@ -40,8 +40,8 @@
             <% if (photos.salonTreatments.length === 0) { %>
                 <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
             <% } else { %>
-                <% for (let i = 0; i < photos.salonTreatments.length; i++) { %>
-                    <img src="<%- photos.salonTreatments[i] %>" alt="<%- photos.salonTreatments[i] %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% for (let i = 0; i < photos.salonTreatments.length && i <= 20; i++) { %>
+                    <img src="<%- photos.salonTreatments[i] %>" alt="Salon Treatment <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.salonTreatments[i] %>">
                 <% }; %>
             <% } %>
             <br>
@@ -51,8 +51,8 @@
             <% if (photos.waxing.length === 0) { %>
                 <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
             <% } else { %>
-                <% for (let i = 0; i < photos.waxing.length; i++) { %>
-                    <img src="<%- photos.waxing[i] %>" alt="Waxing Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% for (let i = 0; i < photos.waxing.length && i <= 20; i++) { %>
+                    <img src="<%- photos.waxing[i] %>" alt="Waxing Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.waxing[i] %>">
                 <% }; %>
             <% } %>
             <br>
@@ -62,8 +62,8 @@
             <% if (photos.tailoring.length === 0) { %>
                 <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
             <% } else { %>
-                <% for (let i = 0; i < photos.tailoring.length; i++) { %>
-                    <img src="<%- photos.tailoring[i] %>" alt="Tailoring Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% for (let i = 0; i < photos.tailoring.length && i <= 20; i++) { %>
+                    <img src="<%- photos.tailoring[i] %>" alt="Tailoring Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.tailoring[i] %>">
                 <% }; %>
             <% } %>
             <br>
@@ -73,8 +73,8 @@
             <% if (photos.embroidery.length === 0) { %>
                 <img src="/placeholder.jpg" alt="Placeholder Image" class="gallery-img">
             <% } else { %>
-                <% for (let i = 0; i < photos.embroidery.length; i++) { %>
-                    <img src="<%- photos.embroidery[i] %>" alt="Embroidery Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img">
+                <% for (let i = 0; i < photos.embroidery.length && i <= 20; i++) { %>
+                    <img src="<%- photos.embroidery[i] %>" alt="Embroidery Service <%- i + 1 %>" onerror="this.src='/placeholder.jpg';" class="gallery-img" title="<%- photos.embroidery[i] %>">
                 <% }; %>
             <% } %>
             <br>
